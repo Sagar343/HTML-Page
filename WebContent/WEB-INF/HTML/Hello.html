@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+#div1,#div2{
+padding: 5px;
+
+
+width:50px;
+height:30px;
+text-align: center;
+
+background-color: #0987;
+
+border: 1px solid #0000;
+
+}
+
+#div2{
+padding: 150px;
+display: none;
+}
+
+#clk,#drp{
+	padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #555;
+    color: white;
+    border: solid 1px #666;
+    border-radius: 3px;
+}
+
+#drp {
+    padding: 50px;
+    display: none;
+}
+
+
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="../js/juery3.js"></script>
+<script src=../js/jquery.min.js></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("tr:even").css("background-color", "yellow");
+	$("tr:odd").css("background-color","#0088");
+	$("#st").css("background-color","#0987")
+	 $("#div1").click(function(){ 
+		
+		$("#div2").slideToggle(450);
+		/* $("p").toggle(3000);    
+		$("#i").hide();
+	
+		$(".p").hide();
+		$("a[target !='blank']").hide(1000);
+		
+		$('.i3,.i4').css('background-color','red'); */
+		
+		/* $("#div1").fadeToggle();
+		$("#div2").fadeToggle("slow");
+		$("#div3").fadeToggle("1000");
+	 */
+			
+	 }); 
+	$("#ani").click(function(){
+		var div=$("#div3")
+			div.animate({height: '100px', opacity: '0.4'}, "slow");
+	        div.animate({width: '100px', opacity: '0.8'}, "slow");
+	        div.animate({height: '300px', opacity: '0.9',fontSize:'3em'}, "slow");
+	        div.animate({width: '300px', opacity: '1',fontSize:'3em'}, "slow");
+	});
+	
+	/* $("#clk").click(function(){
+		$("#drp").slideDown(5000);
+		
+	});
+	$("#stp").click(function() {
+		$("#drp").stop();
+	}); */
+	
+	$("#stp").click(function(){
+		$("#clk").hide("slow",function(){
+
+			alert("hidden");
+		});
+		
+	});
+	
+	$("#ab").click(function(){
+		$("#saga").load("text.html", function(responseTxt,statusTxt,xhr){
+			if(statusTxt=="success")
+				alert("page loaded ");
+				
+				if(statusTxt=="error")
+					alert(xhr.statusText);
+			}
+		});
+	});
+});
+
+</script>
+</head>
+<body>
+
+<table border='1' class="tbl">
+<tr>
+<th>name</th>
+<th>lastname</th>
+
+</tr>
+
+
+
+
+
+
+<tr id="st">
+<td>sagar</td>
+<td>patil</td>
+
+</tr>
+<tr>
+<td>suneel</td>
+<td>Lamani</td>
+</tr>
+
+<tr>
+<td>linga </td>
+<td>lingaraj</td>
+</tr>
+<tr>
+<td>sachin </td>
+<td>patil</td>
+</tr>
+</table>
+<p><a href="https://www.w3schools.com/html/" target="blank">HTML Tutorial</a></p>
+<p><a href="https://www.w3schools.com/css/">CSS Tutorial</a></p>
+
+<div id="div1" > Hello Word</div><br>
+<div id="div2" >welcomesdadadmhvbdcndcd<br>
+sdasdasdadc<br>
+
+</div><br>
+
+
+<!-- <button id="ani">click here to see animation</button>
+<div id="div3" style="background:#98bf21;height:100px;width:100px;position:absolute;"> animated example</div><br> -->
+
+<button id="stp">stop</button>
+<div id="clk">click here</div>
+<div id="drp">hello</div>
+
+<div id="saga"> this is to practice ajax call</div>
+
+<button id="ab">ajax</button>
+</body>
+</html>

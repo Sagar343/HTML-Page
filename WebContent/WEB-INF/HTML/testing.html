@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="../js/juery3.js"></script>
+<script src=../js/jquery.min.js></script>
+<title>Simple Web Form</title>
+<script >
+$(document).ready(function(){
+	$("#div1").hide();
+	$("button").click(function(){
+		var skilsets=[];
+		$.each($("input:checkbox[name=skill]:checked"),function(){
+			skilsets.push($(this).val());
+		});
+		
+		var ui_skills=[];
+		$.each($("input:checkbox[name=uie]:checked"),function(){
+			ui_skills.push($(this).val());
+		});
+		
+	
+		$("#div1").show();
+		$("#sk").text(skilsets.join(","));
+		$("#uisk").text(ui_skills.join(","));
+	});
+});
+
+</script>
+<style >
+body{
+	margin:0;
+	padding:0;
+	background:url(../imsgs/1280x720-data_out_173_5093418-hd-movie-wallpapers-1080p.jpg) no-repeat fixed;
+	background-position: center;
+	font-family: sans-serif;
+	
+    background-size: cover;
+}
+label{
+
+background-color: #3498DB;
+opacity: 0.5;
+padding: 12px 20px;
+width: 100px;
+display:inline-block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ 
+height: 20px;
+text-align: left;
+
+}
+h4{
+background-position:center;
+background-color: #3498DB;
+opacity: 0.5;
+padding: 12px 30px;
+width:580px;
+ border: 1px solid #ccc;
+    border-radius: 4px;
+    
+height: 20px;
+text-align: left;
+
+
+}
+/* h1{
+background-position:center;
+
+opacity: 0.5;
+padding: 30px 400px;
+width: 100%;
+ 
+    
+height: 20px;
+text-align: left;
+	} */
+input[type=text], select {
+   
+  
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 500px;
+    box-sizing: border-box;
+    
+}
+
+input[type=checkbox]:not(old){
+display:inline-block;
+  width     : 4em;
+  margin    : 10px;
+  padding   : 10px;
+  font-size : 1em;
+  opacity   : 0.5;
+  font-family: times new roman;
+  font-size:large;
+    
+
+}
+button{
+    width: 650px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#maindiv{
+	width:100%;
+	top: 50%;
+	left: 50%;
+	position:center;
+	background:#fc017;
+	opacity:0.7;
+	position: absolute;
+	transform:translate(-50%,-50%);
+	box-sizing: border-box; 
+	padding:70px 30px;
+	color: #fff;
+}
+
+#div1{
+	width:720px;
+	top: 50%;
+	left: 50%;
+	position:center;
+	background:#000;
+	opacity:0.7;
+	position: absolute;
+	transform:translate(-50%,-50%);
+	box-sizing: border-box; 
+	padding:70px 30px;
+	color: #fff;
+}
+
+</style>
+</head>
+<body bgcolor="#0000" >
+
+
+<div id="maindiv" style="background-color: #1F0605" align="center">
+<h1>Registration </h1>
+<label>Name</label><input type="text" placeholder="enter First Name"><br>
+<label>Qualification</label><input type="text" placeholder="enter First Name"><br>
+
+<h4>Skills:</h4>
+<input type="checkbox" name="skill" value="java">java</input>
+<input type="checkbox" name="skill" value="sql">sql</input>
+<input type="checkbox" name="skill" value="springs">springs</input>
+<input type="checkbox" name="skill" value="hibernate">hibernate</input>
+
+<h4>UI skills:</h4>
+<input type="checkbox" name="uie" value="bootsttrap">bootstrap</input>
+<input type="checkbox" name="uie" value="html5">HTML5</input>
+<input type="checkbox" name="uie" value="css">css</input>
+<input type="checkbox" name="uie" value="JQuery">JQuery</input>
+
+
+
+<br><br>
+<button>click </button>
+<div id="div1">
+<h3>Skills Selected: </h3><span id="sk"></span>
+
+<h3>UI Skills Selected:</h3><span id="uisk"></span>
+
+</div>
+</div>
+</body>
+</html>
